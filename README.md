@@ -68,17 +68,6 @@ It's a good practice to use a virtual environment to manage your project's depen
    deactivate
    ```
 
-## Contributing
-
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-This project is licensed under the Creative Commons Attribution-ShareAlike License - see the [LICENSE](LICENSE) file for details.
-```
-
----
-
 ### **`CONTRIBUTING.md`**
 
 - **Purpose**: Outlines guidelines for contributors.
