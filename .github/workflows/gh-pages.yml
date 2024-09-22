@@ -1,0 +1,52 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive texlive-latex-extra texlive-xetex
+
+      - name: Build MkDocs Site
+        run: mkdocs build --clean
+
+      - name: Generate PDF Version
+        run: |
+          pandoc $(find docs -name '*.md' | sort) -o site/book.pdf --metadata-file=metadata.yaml --pdf-engine=xelatex --toc
+
+      - name: Generate EPUB Version
+        run: |
+          pandoc $(find docs -name '*.md' | sort) -o site/book.epub --metadata-file=metadata.yaml
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

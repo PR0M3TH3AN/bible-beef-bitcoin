@@ -1,0 +1,7 @@
+bible/role-of-faith.md
+bible/lessons-from-scripture.md
+beef/nutrition-and-wellbeing.md
+beef/high-protein-diet.md
+bitcoin/understanding-bitcoin.md
+bitcoin/financial-autonomy.md
+conclusion.md

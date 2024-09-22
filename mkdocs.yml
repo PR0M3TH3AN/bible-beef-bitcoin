@@ -1,0 +1,22 @@
+site_name: 'Bible. Beef. Bitcoin.: How to Have Peace in a World of Chaos'
+theme:
+  name: 'material'
+
+nav:
+  - Home: index.md
+  - 'Part I: Bible - Spiritual Well-being':
+      - 'The Role of Faith': bible/role-of-faith.md
+      - 'Lessons from Scripture': bible/lessons-from-scripture.md
+  - 'Part II: Beef - Physical Health':
+      - 'Nutrition and Well-being': beef/nutrition-and-wellbeing.md        
+      - 'Benefits of a High-Protein Diet': beef/high-protein-diet.md       
+  - 'Part III: Bitcoin - Financial Independence':
+      - 'Understanding Bitcoin': bitcoin/understanding-bitcoin.md
+      - 'Financial Autonomy': bitcoin/financial-autonomy.md
+  - Conclusion: conclusion.md
+  - Download:
+      - 'PDF Version': book.pdf
+      - 'EPUB Version': book.epub
+
+plugins:
+  - search
