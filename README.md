@@ -68,12 +68,6 @@ It's a good practice to use a virtual environment to manage your project's depen
    deactivate
    ```
 
-### **`CONTRIBUTING.md`**
-
-- **Purpose**: Outlines guidelines for contributors.
-- **Content**:
-
-```markdown
 # Contributing to Bible. Beef. Bitcoin.
 
 Thank you for considering contributing to this project!
